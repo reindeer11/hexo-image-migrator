@@ -1,4 +1,4 @@
-# Hexo 图片迁移工具
+# Hexo 图片迁移工具（Agent skill）
 
 将外部图片链接（语雀/Yuque CDN）迁移到本地 Hexo 资源文件夹的自动化工具。
 🦌author: "reindeer"
