@@ -74,9 +74,8 @@ def process_markdown_file(md_path):
     
     new_content = content
     for old_url, filename in url_to_local.items():
-        old_str = f"!]({old_url})"
-        new_str = f"{{% asset_img {filename} %}}"
-        new_content = new_content.replace(old_str, new_str)
+        pattern = re.compile(r'!\[[^\]]*\]\(' + re.escape(old_url) + r'\)')
+        new_content = pattern.sub(f"{{% asset_img {filename} %}}", new_content)
     
     with open(md_path, "w", encoding="utf-8") as f:
         f.write(new_content)
